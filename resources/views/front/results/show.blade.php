@@ -11,6 +11,12 @@
                                 <tr class="w-28">
                                     <th
                                         class="border border-solid bg-slate-100 px-6 py-3 text-left text-sm font-semibold uppercase text-slate-600">
+                                        ID#</th>
+                                    <td class="border border-solid px-6 py-3">{{ $test->user->username ?? '' }}</td>
+                                </tr>
+                                <tr class="w-28">
+                                    <th
+                                        class="border border-solid bg-slate-100 px-6 py-3 text-left text-sm font-semibold uppercase text-slate-600">
                                         User</th>
                                     <td class="border border-solid px-6 py-3">{{ $test->user->name ?? '' }}
                                         ({{ $test->user->email ?? '' }})</td>

@@ -31,7 +31,7 @@ class Leaderboard extends Component
             })
             ->count();
 
-        $users = User::select('users.name', DB::raw('sum(tests.result) as correct'), DB::raw('sum(tests.time_spent) as time_spent'))
+        $users = User::select('users.name', 'users.username', DB::raw('sum(tests.result) as correct'), DB::raw('sum(tests.time_spent) as time_spent'))
             ->join('tests', 'users.id', '=', 'tests.user_id')
             ->whereNotNull('tests.quiz_id')
             ->whereNotNull('tests.time_spent')

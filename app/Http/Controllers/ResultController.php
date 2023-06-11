@@ -6,6 +6,7 @@ use App\Models\Test;
 use App\Models\User;
 use App\Models\TestAnswer;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\DB;
 
 class ResultController extends Controller
 {
@@ -27,7 +28,7 @@ class ResultController extends Controller
             ->get();
 
         if (!$test->quiz->public) {
-            $users = User::select('users.id', 'users.name', \DB::raw('sum(tests.result) as correct'), \DB::raw('sum(tests.time_spent) as time_spent'))
+            $users = User::select('users.id', 'users.username', 'users.name', DB::raw('sum(tests.result) as correct'), DB::raw('sum(tests.time_spent) as time_spent'))
                 ->join('tests', 'users.id', '=', 'tests.user_id')
                 ->where('tests.quiz_id', $test->quiz_id)
                 ->whereNotNull('tests.time_spent')

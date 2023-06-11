@@ -15,7 +15,11 @@
                                 <tr>
                                     <th class="w-16 bg-gray-50 px-6 py-3 text-left">
                                         <span
-                                            class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">ID</span>
+                                            class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500"></span>
+                                    </th>
+                                    <th class="bg-gray-50 px-6 py-3 text-left">
+                                        <span
+                                            class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">ID#</span>
                                     </th>
                                     <th class="bg-gray-50 px-6 py-3 text-left">
                                         <span
@@ -49,6 +53,9 @@
                                     <tr class="bg-white">
                                         <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
                                             {{ $test->id }}
+                                        </td>
+                                        <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                            {{ $test->user->username ?? 'Guest' }}
                                         </td>
                                         <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
                                             {{ $test->user->name ?? 'Guest' }}

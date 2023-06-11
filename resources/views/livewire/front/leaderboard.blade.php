@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900">
                     <select class="p-3 w-full text-sm leading-5 rounded border-0 shadow text-slate-600"
                         wire:model="quizId">
-                        <option value="0">--- all quizzes ---</option>
+                        <option value="0">Pilih Quiz</option>
                         @foreach ($quizzes as $quiz)
                             <option value="{{ $quiz->id }}">{{ $quiz->title }}</option>
                         @endforeach
@@ -19,15 +19,21 @@
                     <table class="table mt-4 w-full table-view">
                         <thead>
                             <tr>
-                                <th class="bg-gray-50 px-6 py-3 text-left w-9"></th>
+                                <th class="bg-gray-50 px-6 py-3 text-left w-9">
+                                    <span
+                                        class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500"></span>
+                                </th>
+                                <th class="bg-gray-50 px-6 py-3 text-left w-14">
+                                    <span
+                                        class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">ID#</span>
+                                </th>
                                 <th class="bg-gray-50 px-6 py-3 text-left w-1/2">
                                     <span
                                         class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">Username</span>
                                 </th>
                                 <th class="bg-gray-50 px-6 py-3 text-left">
-                                    <span
-                                        class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">Correct
-                                        answers</span>
+                                    <span class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">
+                                        Jawaban yang Benar</span>
                                 </th>
                             </tr>
                         </thead>
@@ -38,6 +44,9 @@
                                 ])>
                                     <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
                                         {{ $loop->iteration }}
+                                    </td>
+                                    <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                        {{ $user->username }}
                                     </td>
                                     <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
                                         {{ $user->name }}
