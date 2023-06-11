@@ -1,0 +1,40 @@
+FORUM LIVEWIRE
+https://github.com/livewire/livewire/discussions
+https://github.com/LaravelDaily/Livewire-Laraquiz-Course
+
+DOC API
+https://scribe.knuckles.wtf/laravel
+php artisan scribe:generate
+
+composer require --dev knuckleswtf/scribe
+php artisan vendor:publish --tag=scribe-config
+
+example
+==============================
+
+'response_calls' => [
+    /*
+     * API calls will be made only for routes in this group matching these HTTP methods (GET, POST, etc).
+     * List the methods here or use '*' to mean all methods. Leave empty to disable API calls.
+     */
+    'methods' => [], // previous value: ['GET']
+
+    'auth' => [
+        'enabled' => true, // previous value: false
+        'name' => 'token', // previous value: 'key'
+        'placeholder' => '{TOKEN}', // previous value: '{YOUR_AUTH_KEY}'
+
+/**
+ * @group Auth
+ */
+class PasswordUpdateController extends Controller
+
+/**
+ * @group Vehicles
+ */
+class VehicleController extends Controller
+
+/**
+ * @group Zones
+ */
+class ZoneController extends Controller
